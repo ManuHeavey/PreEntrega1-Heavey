@@ -1,0 +1,118 @@
+/* Fonts and reset */
+
+@font-face {
+    src: url(../public/fonts/OptimusPrinceps.ttf);
+    font-family: darksouls;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background: #674d40;
+    color: black;
+}
+
+/* Nav Bar */
+
+.navLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vh 0;
+    background-color: #332e2e;
+    border-bottom: black solid 0.5rem;
+}
+
+.title {
+    background-color: #332e2e;
+}
+
+.subtitle {
+    background-color: #332e2e;
+    font-family: darksouls;
+}
+
+/* Body of the project */
+
+.introduction {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem 1rem;
+}
+
+.items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.card {
+    width: 18rem;
+    text-align: center;
+}
+
+.buying {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.card button {
+    border: none;
+}
+
+.card button:hover {
+    background-color: #332e2e;
+}
+
+.card button img {
+    height: 2rem;
+    margin: 0.25rem;
+    background-color: transparent;
+}
+
+.card-img-top {
+    padding: 1rem;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.btnTotal {
+    padding: 1rem;
+    border: black solid 5px;
+    border-radius: 10px;
+    background-color: #332e2e;
+    color: white;
+}
+
+.priceTotal {
+    padding-top: 1rem;
+}
+
+#totalPrice {
+    display: none;
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.2rem;
+    margin-top: 1rem;
+    bottom: 0;
+    width: 100%;
+    border-top: black solid 0.5rem;
+    background-color: #332e2e;
+}
