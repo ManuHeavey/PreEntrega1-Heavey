@@ -2,6 +2,14 @@ const priceLS = 1000
 const priceUG = 5000
 const priceGS = 8000
 
+const statsLS = ['10 Strenght', '10 Dexterity']
+const statsUG = ['11 Strenght', '15 Dexterity']
+const statsGS = ['31 Strenght', '12 Dexterity']
+
+document.getElementById("statsLS").innerHTML = statsLS
+document.getElementById("statsUG").innerHTML = statsUG
+document.getElementById("statsGS").innerHTML = statsGS
+
 let totalLS = 0
 document.getElementById("totalLS").innerHTML = totalLS
 let totalUG = 0
