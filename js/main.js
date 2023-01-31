@@ -2,13 +2,50 @@ const priceLS = 1000
 const priceUG = 5000
 const priceGS = 8000
 
-const statsLS = ['10 Strenght', '10 Dexterity']
-const statsUG = ['11 Strenght', '15 Dexterity']
-const statsGS = ['31 Strenght', '12 Dexterity']
+function newUser(){
+    let userName = prompt("Name")
+    let userStr = prompt("Strenght")
+    let userDex = prompt("Dexterity")
 
-document.getElementById("statsLS").innerHTML = statsLS
-document.getElementById("statsUG").innerHTML = statsUG
-document.getElementById("statsGS").innerHTML = statsGS
+    const userInfo = {
+        name: userName,
+        str: userStr,
+        dex: userDex
+    }
+
+    showInfo(userInfo.name, userInfo.str, userInfo.dex)
+}
+newUser()
+
+function showInfo(name, str, dex){
+    let textW = ""
+    const lgStats = {
+        str:10,
+        dex:10
+    }
+    const ugStats = {
+        str:11,
+        dex:16
+    }
+    const gsStats = {
+        str:31,
+        dex:12
+    }
+    
+    if (str >= gsStats.str && dex >= ugStats.dex) { //Chequea el uso de todas las armas
+        textW = "You can use every weapon."
+    } else if (str >= ugStats.str && str <= gsStats.str && dex >= ugStats.dex) { //Chequea uso de UG y LG
+        textW = "You can wield the Uchigatana and the Logsword, but not the Greatsword."
+    } else if (str >= gsStats.str && dex >= gsStats.dex && dex < ugStats.dex) { //Chequea el uso de LG y GS
+        textW = "You can wield the Longsword and the Greatsword, but not the Uchigatana."
+    } else if (str >= lgStats.str && str <= ugStats.str && dex >= lgStats.str && dex <= gsStats.dex) { //Chequea el uso de LG
+        textW = "You can only wiled the Longsword."
+    } else textW = "You cant wield any weapons... Start leveling up some stats!" //No puede usar nada
+    
+    console.log(textW)
+
+    alert(`Welcome ${name}, your strenght stat is ${str} and your dexterity stat is ${dex}. Check the console log to know which weapons you can use! Enjoy your stay.`)
+}
 
 let totalLS = 0
 document.getElementById("totalLS").innerHTML = totalLS
